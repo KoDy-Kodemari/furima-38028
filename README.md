@@ -56,10 +56,11 @@
 | prefecture_id      | integer    | null: false                    |
 | city               | string     | null: false                    |
 | address_num        | string     | null: false                    |
-| building           | string     | null: false                    |
-| tel_num            | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| item               | references | null: false, foreign_key: true |
+| building           | string     |                                |
+| tel_num            | string     | null: false                    |
+| order              | references | null: false, foreign_key: true |
+
+
 
 ### Association
 - belongs_to :order
