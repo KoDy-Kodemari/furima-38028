@@ -96,27 +96,27 @@ RSpec.describe User, type: :model do
     end
 
     it "last_name_kanjiが全角（漢字・ひらがな・カタカナ）以外だと登録できない" do
-      @user.last_name = "aaa"
+      @user.last_name_kanji = "aaa"
       @user.valid?
-      expect(@user.errors.full_messages).to include("Last name is invalid. Input full-width characters")
+      expect(@user.errors.full_messages).to include("Last name kanji is invalid. Input full-width characters")
     end
 
     it "last_name_kanjiが全角（漢字・ひらがな・カタカナ）以外だと登録できない" do
-      @user.first_name = "aaa"
+      @user.first_name_kanji = "aaa"
       @user.valid?
-      expect(@user.errors.full_messages).to include("First name is invalid. Input full-width characters")
+      expect(@user.errors.full_messages).to include("First name kanji is invalid. Input full-width characters")
     end
 
     it "last_name_kanaが全角（カタカナ）以外だと登録できない" do
-      @user.last_name_reading = "aaa"
+      @user.last_name_kana = "aaa"
       @user.valid?
-      expect(@user.errors.full_messages).to include("Last name reading is invalid. Input full-width katakana characters")
+      expect(@user.errors.full_messages).to include("Last name kana is invalid. Input full-width katakana characters")
     end
 
     it "first_name_kanaが全角（カタカナ）以外だと登録できない" do
-      @user.first_name_reading = "aaa"
+      @user.first_name_kana = "aaa"
       @user.valid?
-      expect(@user.errors.full_messages).to include("First name reading is invalid. Input full-width katakana characters")
+      expect(@user.errors.full_messages).to include("First name kana is invalid. Input full-width katakana characters")
     end
 
     it "date_of_birthが空だと登録できない" do
